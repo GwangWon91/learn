@@ -1,0 +1,24 @@
+---
+layout: default
+---
+<article>
+  <header>
+    <h1>{{ page.title }}</h1>
+    {% if page.period %}<p>{{ page.period }}</p>{% endif %}
+    {% if page.tags %}
+    <ul>
+      {% for tag in page.tags %}<li>{{ tag }}</li>{% endfor %}
+    </ul>
+    {% endif %}
+  </header>
+
+  {{ content }}
+
+  {% if page.links %}
+  <footer>
+    <ul>
+      {% for link in page.links %}<li><a href="{{ link.url }}">{{ link.label }}</a></li>{% endfor %}
+    </ul>
+  </footer>
+  {% endif %}
+</article>
